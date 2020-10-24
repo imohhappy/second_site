@@ -1,0 +1,27 @@
+{% extends 'index.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block content %}
+<div class="container" style="margin-top:20px; justify-content:center;display:flex">
+    <div class="jumbotron" style="width:700px; background-image: url({% static 'images/backg2.jpg' %})">
+
+<form method="POST" action="">
+    {% csrf_token %}
+{{contact.name.label_tag}}{{contact.name|linebreaks}}
+    <div style="margin-left:300px;margin-top:-75px">{{contact.phone_num.label_tag}}{{contact.phone_num|linebreaks}}</div>
+    {{contact.E_mail.label_tag}}{{contact.E_mail|linebreaks}}
+    <div style="margin-left:300px;margin-top:-80px">{{contact.comment.label_tag|linebreaks}}{{contact.comment}}</div><br>
+    <div style=" justify-content:center;display:flex"><input type="submit" value="save" class="btn btn-success"></div>
+</form>
+         </div>
+</div>
+{% endblock %}
+
+</body>
+</html>

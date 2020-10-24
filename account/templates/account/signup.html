@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body bgcolor="blue">
+{% include 'nav.html' %}
+{% if form.username.errors %}
+<p>wrong user name</p>
+{% elif form.password2.errors %}
+<p>fuckoff man</p>
+{% elif form.errors %}
+<p>dick head</p>
+{% endif %}
+<div class="container">
+    <div class="jumbotron" style="width:800px;margin-top:20px; background-color:orange">
+<form METHOD="POST">
+    {% csrf_token %}
+    <center>
+    {{form.username.label_tag}}{{form.username|linebreaks}}
+    password{{form.password1|linebreaks}}
+    confirm password{{form.password2|linebreaks}}
+    <input type="submit" value="signup">
+        </center>
+</form>
+           <h6 style="display:flex; justify-content:center;margin-left:-250px; margin-top:5px"> login if u already have and account <a href="{% url 'account:login' %}"><input type="submit" value="login"></a>
+        </h6>
+    </div>
+    </div>
+
+</body>
+</html>

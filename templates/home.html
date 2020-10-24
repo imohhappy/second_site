@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        h2{background-color: red}
+    </style>
+    <link rel="stylesheet"
+          href = "{% static 'css/home.css' %}">
+</head>
+<body bgcolor="white">
+{% include 'index.html' %}
+<div class="container">
+    <div class="jumbotron" style="margin-top:20px">
+        <h2>you are welcome to my site. Remember to buy your data b4 coming </h2>
+        <div style="justify-content:center;display:flex"><img src="{% static 'images/destination_4.jpg' %}"></div>
+<h2 style="margin-top:20px">we are moving</h2>
+<!--<h1>this is in-line styling</h1>
+<h1><p>{{testing|upper}}</p></h1>
+<h1><p>{{testing|capfirst}}</p></h1>
+<h1><p>{{testing|title}}</p></h1>
+<h1><p>{{testing|truncatechars:8}}</p></h1>
+<h4><p>{{email|urlize}}</p></h4>
+<h4><p>{{email|add:','}}</p></h4>
+
+
+<h1><p>{{testing|wordcount}}</p></h1>
+{% with mail=email %}
+{{mail}}-->
+{% endwith %}
+    </div>
+</div>
+
+</body>
+</html>

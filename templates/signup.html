@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body bgcolor="blue">
+{% include 'nav.html' %}
+<div class="container">
+{% block content %}
+<div class="row" style="display:flex; justify-content:center; margin-top:40px">
+<div class="cd-sm-6">
+    <div class="jumbotron" style="border-radius:30px">
+        <!--background-image:url({% static 'img/IMG-20200715-WA0000.jpg' %})-->
+<form method="POST">
+    {% csrf_token%}
+    <!--{{morm.as_ul}}-->
+     {{morm.as_p}}
+     <!--{{morm.as_table}}-->
+    <input type="submit" value="Save">
+</form>
+        </div>
+    </div>
+    </div>
+    {% endblock %}
+</div>
+</body>
+</html>

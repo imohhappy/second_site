@@ -1,0 +1,37 @@
+{% extends 'nav.html' %}
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>contact</title>
+</head>
+<body bgcolor="pink">
+{% block content %}
+
+<div style=" color: purple; display:flex; justify-content:center">
+    <i><h1>For more enquires, reach out to White:</h1></i></div>
+<div style=" color: purple; display:flex; justify-content:center">
+    <h3>Call: <i>07063997133</i></h3></div>
+<div style=" color: purple; display:flex; justify-content:center">
+    <h3>Email: <i>r.anietie@yahoo.com</i></h3></div>
+<div style=" color: purple; display:flex; justify-content:center">
+    <h3>WhatsApp: <i>08089281388</i></h3></div>
+<div style=" color: purple; display:flex; justify-content:center">
+    <h3>Twitter: <i>@giftedwhite</i></h3>
+    </div>
+<div style="display:flex; justify-content:center">
+<form action="{% url 'job:comment' %}">
+
+
+<input style="color:red; margin:5px" type="submit" value="Comment">
+
+ </form>
+    <br>
+<form action="{% url 'home' %}">
+    <input style="color:red; margin:5px" type="submit" value="Home">
+
+</form>
+     </div>
+</body>
+{% endblock %}
+</html>

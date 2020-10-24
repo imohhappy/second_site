@@ -1,0 +1,17 @@
+{% extends 'nav.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block content %}
+
+<p><a href="{% url 'job:detail' pit.vacancy.pk %}">{{pit.name}}</a></p>
+<p>Order: {{pit.order}}</p>
+<p>Description: {{pit.description}}</p>
+
+{% endblock %}
+
+</body>
+</html>

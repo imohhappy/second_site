@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="POST">
+    {% csrf_token %}
+<p>userdetails</p>
+{{user.username}}<br>
+{{user.password}}
+<p>update your detail </p>
+<a href="{% url 'devid:case' %}">update</a>
+
+<hr>
+<p>change password </p>
+<a href="{% url 'account:word' %}">change password </a>
+</form>
+</body>
+</html>

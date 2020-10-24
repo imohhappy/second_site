@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>about</title>
+
+</head>
+<body bgcolor="violet">
+{% include 'nav.html' %}
+<center>
+<p><h1>This is Wholphinplus, a software company</h1>
+<h3>please refer to Contact for more information on our product and services</h3>
+<br>
+<div class="container">
+
+<form action="{% url 'job:contact' %}">
+
+<input style="color:red" type="submit" value="Contact">
+</form>
+
+</div>
+</center>
+
+</body>
+</html>

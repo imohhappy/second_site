@@ -1,0 +1,47 @@
+{% extends 'nav.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block content %}
+<div class="container">
+<div class="jumbotron" style="margin-top:20px"><img src="{% static 'images/image_5.jpg' %}" style="">
+<h1><a href="{% url 'job:vacancy' %}"> {{ keep.title }} </a></h1>
+<i>{{keep.description}}</i>
+{% for anyname in keep.post_set.all %}
+<p><a href="{% url 'job:postkeep' anyname.vacancy.pk anyname.pk %}">{{anyname.name}}</a></p>
+<p>Order: {{anyname.order}}</p>
+<p>Description: {{anyname.description}}</p>
+{% endfor %}
+    {% if user.is_superuser %}
+<div class="btn-group btn-group-justified">
+    <a href="{% url 'job:Vupdate'  keep.pk %}" class="btn-group"> <button class="btn btn-info"> update </button> </a>
+    <a href="{% url 'job:Vdelete'  keep.pk %}" class="btn-group"> <button class="btn btn-info"> delete </button> </a>
+</div>
+    {% endif %}
+    <hr>
+    <!--
+    {% if user.is_superuser %}
+    update {{anyname.name}}
+    <form method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input  type="submit" value="submit">
+    </form>
+    {% endif %}
+    {% if user.is_superuser %}
+    delete {{keep.title}}
+    <form METHOD="POST">
+        {% csrf_token %}
+        <input  type="submit" value="delete">
+    </form>
+    {% endif %}
+    -->
+{% endblock %}
+</div>
+</div>
+</body>
+</html>

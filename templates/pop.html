@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet"
+          href="{% static 'css/bootstrap.min.css' %}">
+</head>
+<body>
+{% include 'nav.html' %}
+<div class="container" style="width:474px;margin-top:20px">
+    <div><p><strong>update user detail </strong></p></div>
+
+    <div class="jumbotron" style="width:540px; background-image: url({% static 'images/why_1.jpg' %});">
+        {% block content %}
+        <form method="post" action="">
+            {% csrf_token %}
+            <div style="margin-left:150px; margin-top:-40px">
+                {{pen.passport.label_tag}}{{pen.passport|linebreaks}}</div>
+
+            <div style="background-color:blue;width:474px;justify-content:center;display:flex">
+                Personal Information
+            </div>
+
+            {{pen.surname.label_tag}}{{pen.surname|linebreaks}}
+            <div style="margin-left:300px;margin-top:-75px">{{pen.first_name.label_tag}}{{pen.first_name|linebreaks}}
+            </div>
+            {{pen.other_names.label_tag}}{{pen.other_names|linebreaks}}
+            <div style="margin-left:300px;margin-top:-75px">{{pen.gender.label_tag}}{{pen.gender|linebreaks}}</div>
+            {{pen.phone_number.label_tag}}{{pen.phone_number|linebreaks}}
+            <div style="margin-left:300px;margin-top:-75px">
+                {{pen.phone_number_2.label_tag}}{{pen.phone_number_2|linebreaks}}
+            </div>
+            {{pen.marital_status.label_tag}}{{pen.marital_status|linebreaks}}
+            <div style="margin-left:300px;margin-top:-75px">
+                {{pen.date_of_birth.label_tag}}{{pen.date_of_birth|linebreaks}}
+            </div>
+
+            <div style="background-color:blue;justify-content:center;display:flex">
+                Next of kin
+            </div>
+            {{pen.name.label_tag}}{{pen.name|linebreaks}}
+            <div style="margin-left:300px;margin-top:-75px">{{pen.phone.label_tag}}{{pen.phone|linebreaks}}</div>
+            {{pen.email.label_tag}}{{pen.email|linebreaks}}
+            <div style="margin-left:200px;margin-top:-75px">{{pen.gender_2.label_tag}}{{pen.gender_2|linebreaks}}</div>
+            <div style="margin-left:300px;margin-top:-73px">
+                {{pen.relationship.label_tag}}{{pen.relationship|linebreaks}}</div>
+            <div style=" justify-content:center;display:flex"><input type="submit" value="save" class="btn btn-success"></div>
+        </form>
+        <p><strong>ignore and <a href="{% url 'account:login' %}" style="background-color:white"> login</a> </strong></p>
+        {% endblock %}
+
+    </div>
+</div>
+</body>
+</html>
